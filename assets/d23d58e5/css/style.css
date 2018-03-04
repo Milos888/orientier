@@ -1,0 +1,72 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 03.12.2013, 13:40:19
+    Author     : Oleg Semenuk <oleg@vipdesign.com.ua>
+*/
+
+
+/** LIST Style */
+.header {
+    overflow: hidden;
+}
+
+.header .form-inline {
+    margin-top: 20px;
+}
+
+
+div.type_page, div.type_link, div.type_module{
+    background:pink;
+    background:url(../pic/link_type.png) center 0 no-repeat;
+    width: 25px;
+    margin: auto;
+}
+div.type_page{ background-position:center -25px;}
+div.type_module{ background-position:center -50px;}       
+
+/** FORM Style */
+
+.round_button, .round_button:hover, .round_button:active, .round_button:focus{
+    width:117px; height:115px;
+    text-decoration:none;
+    outline: none;
+    font-size:11px;
+    padding-top:22px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+    background:url(../pic/round_button.png);
+}
+
+.round_button{
+    display:block;
+}
+.round_button.curr{ background-position:0 -117px;}
+
+.round_button span{
+    display:block;
+    width:65px;
+    height:20px;
+    margin:0 auto;
+    background:url(../pic/round_but_span.png);
+    padding-top:45px;
+    text-align:center;
+}
+
+.round_button span.type_page{ background-position:0 -130px}
+.round_button.curr span.type_page{ background-position:-65px -130px}
+.round_button span.type_link{ background-position:0 0}
+.round_button.curr span.type_link{ background-position:-65px 0}
+.round_button span.type_module{ background-position:0 -60px}
+.round_button.curr span.type_module{ background-position:-65px -60px}
+
+@media (max-width: 991px) {
+    .round_button{
+        display:inline-block;
+        margin-left: 10px;
+    }
+}
+

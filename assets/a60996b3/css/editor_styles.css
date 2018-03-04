@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+.font15 {
+  font: 15px/1.33 Arial, Helvetica, sans-serif;
+}
+.info-block-font {
+  text-transform: uppercase;
+  font: 20px/1 helioscond-bold-webfont;
+  color: #3F4547;
+}
+.main-green-title {
+  color: #6bbb28;
+  text-transform: uppercase;
+  font: 42px helioscond-bold-webfont;
+}
+.middle-green-title {
+  color: #6bbb28;
+  font: 18px/1.1 ubuntucondensed-regular-webfont;
+  line-height: 2.5;
+}
+.dark-title {
+  color: #3f4547;
+  text-transform: uppercase;
+  font: 30px helioscond-bold-webfont;
+}
+.dark-title-large {
+  color: #3f4547;
+  font: 48px helioscond-bold-webfont;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 0.7;
+}
+.more-font {
+  color: #818181;
+  font-size: 12px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 0 20px;
+}
+.imgCenter {
+  text-align: center;
+}

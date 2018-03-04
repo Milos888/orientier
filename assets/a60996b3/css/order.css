@@ -1,0 +1,414 @@
+@charset "utf-8";
+
+div.xhr-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    display: none;
+    z-index: 100;
+    opacity: 0.8;
+}
+
+.xhr-form-wrap{ 
+    width:840px; height:450px; position:fixed; left:50%; top:50%; margin:-240px 0 0 -420px; background:white; z-index:1000;	
+    padding:10px 30px;	
+    -webkit-box-shadow: 0px 3px 3px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 3px 3px 3px rgba(0, 0, 0, 0.4);
+    -o-box-shadow: 0px 3px 3px 3px rgba(0, 0, 0, 0.4); 
+    -khtml-box-shadow: 0px 3px 3px 3px rgba(0, 0, 0, 0.4);
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    -o-border-radius:5px;
+    -khtml-border-radius:5px;
+}
+.xhr-form-close {
+	position: absolute;
+	top: -12px;
+	right: -15px;
+	height: 30px;
+	width: 30px;
+	background: url('../pic/pic_css/fancy_closebox.png') top left no-repeat;
+	cursor: pointer;
+	z-index: 181;
+	display: none;
+}
+.xhr-form-close { text-indent:-9999px; display:block}
+.xhr-form-inner {}
+
+
+
+#form_calculate > div{ overflow:hidden; padding-bottom:8px}	
+	#form_calculate > div > label{ display:block; float:left; width:80px;}	
+#form_calculate	input[type="text"]{ margin:0 5px; border:1px solid #bfbfbf; height:20px; min-width:40px; font-family:Arial, Helvetica, sans-serif; padding-left:5px}
+ 
+#form_calculate{ padding:13px 10px 10px}
+
+
+	.car_head{ border-bottom:1px solid #6cc82a; height:30px; border-top: 2px solid #6CC82A; padding-top: 6px; background:#F1F1F5;}	
+	#form_calculate > div.car{ padding-top:10px; }
+	 .car_body{max-height:222px; overflow-y:auto; }
+	.cars_content{ border-bottom:2px solid #6cc82a;}
+		.cars_content p{ padding-bottom:5px}
+	.car_body{ clear:both;  position: relative; border-bottom:1px solid #bfbfbf; }
+	.car_item{min-height:30px}
+	.car_item{padding-bottom:5px;}
+        
+	.car_item.car{ padding-top:0}
+	.agent_type, .car_type, .pallet_amount_total, .size, .sort, .type, .density, .package, .product, .pallet_amount, .volume, .agent, .zakaz_edit{
+		float:left; text-align:center;  padding:8px 3px 4px;
+	}	
+	.car_head div{text-transform:uppercase; color:#333333; padding:4px 3px; font-weight:bold}
+	div.car_type{ width:150px; text-align:left; padding-left:10px;}
+        div.agent_type { width:180px; text-align:left; padding-left:10px;}
+	.pallet_amount_total{ width:85px; }
+	.size {width:135px;}
+	.sort {width:60px;}
+	.type {width:65px;}
+	.density {width:82px;}
+        .package {width:85px;}
+        .product {width:70px;}
+	.pallet_amount {width:120px;}
+        .amount {width:40px !important;}
+	.volume {width:60px;}
+	.agent {width:186px;}
+	.zakaz_edit{/*width:80px;*/}
+	.from_bd .zakaz_item_wrap{ float:left}
+	.car_body div{}
+	.car input[type='text']{ width:80%; padding-left:4px; }
+	.car input[type='text'], .car select {border:1px solid #bfbfbf; height:24px; min-width:40px; font-family:Arial, Helvetica, sans-serif; max-width:150px}
+	.car .car_type select{ width:150px}
+	.car_type input.invoice{  width: 143px;}
+	.car input[type='text'], #form_calculate	{ height:20px;}
+		.edit_tovar, .delete_tovar, .delete_car_from_bd, .edit_car_from_bd, 
+                .edit_user, .delete_user, .edit_calculate, .delete_calculate, .delete_invoice{
+			width:40px;
+			float:left;
+			height:30px;
+			text-indent:-9999px;
+			background: url(../pic/pic_css/operations.png);
+			cursor:pointer;
+			margin-top: -6px;
+		}
+		.delete_tovar, .delete_car_from_bd, .delete_user, 
+                .delete_calculate, .delete_invoice{ background-position:-40px 0}
+		.delete_tovar{ /*margin-left:43px*/}
+		div.delete_car{ margin:15px 0 0px 0; color:#E4342F; cursor:pointer; width:140px; text-align:center; text-transform:none; font-weight:normal; font-style:italic}
+		div.delete_car:hover{ text-decoration:underline}
+		.add_calculate, .add_car, .grey_submit_nice{
+			display:block;
+			padding:4px 8px;
+			background:#333;
+			color:#fff;
+			font-size:14px;
+			text-transform:uppercase;
+			cursor:pointer;
+			width:140px;
+			text-align:center;
+		}
+		.type select{ max-width:90px}
+        .loader_calculate {
+            background: url(../pic/pic_css/ajax_loader.gif) 0 0 no-repeat;
+            width:20px;
+            height:16px;
+            margin: 8px 5px 0px;
+        }
+        .yellow_btn {
+            display: block;
+            padding: 0px 10px;
+            margin: 10px;
+            background: #faad20;
+            color: #fff;
+            font: bold 13px/28px Arial;
+            height: 28px;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -o-border-radius: 4px;
+            -khtml-border-radius: 4px;            
+        } 
+        .yellow_btn:hover{background:#ff8400;}
+        .gray_btn {
+            display: block;
+            padding: 0px 10px;
+            margin: 10px;
+            background: #737572;
+            color: #fff;
+            font: bold 13px/28px Arial;
+            height: 28px;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -o-border-radius: 4px;
+            -khtml-border-radius: 4px;            
+        } 
+        .gray_btn:hover{background:#4a4b4b;}
+	/*cars from BD start*/
+		.from_bd input, .from_bd .custom-select{display:none;}
+		.car_operations{ clear:both; padding: 10px 0;}
+		.from_bd .car_operations{ display:none}
+		.zakaz_edit_car_from_bd{position:absolute; top:10px; right:0}
+		.from_bd .car{ position:relative}
+	/*cars from BD end*/	
+	/*cars from BD editable start*/
+		.from_bd .editable input, .from_bd .editable .custom-select{display:inline-block; min-width:40px}
+		.from_bd .editable span{ display:none}
+		.car_item.editable{ background:#f0f9e9; padding:10px 0 10px;}
+		.car_item.editable .car_operations{ display:block; padding-top:5px}
+		.from_bd .zakaz_edit{ visibility:hidden}
+		.from_bd .editable .zakaz_edit{ visibility:visible}
+	/*cars from BD editable end*/	
+	.select_range_date{
+		padding:30px 0 40px;
+	}	
+		.select_range_date input[type="text"]{
+			height:32px;
+			padding:2px 4px;
+			width:100px;
+			border:1px solid #bfbfbf;
+		}
+		.select_range_date label, .select_range_date .fl{ line-height:28px; padding:0 8px 0 0;}
+	/*nice buttons and links start*/
+		.submit_nice{ 
+			float:right; clear:both; margin:0 0 30px;
+			background:#faad20;
+		}
+		.submit_nice:hover{background:#ff8400;}
+			.submit_nice input, .grey_submit_nice input{
+				border:none;
+				background:none;
+				text-transform:uppercase;
+			}
+			.add_calculate, .add_car, .submit_nice input, .grey_submit_nice input, .grey_submit_nice{
+				height:28px;
+				padding:0 12px;
+				color:#fff;
+				font:bold 14px/28px Arial;
+				cursor:pointer;
+			}
+			.submit_nice{float: none; padding:5px; margin:10px 0; width: 130px;}
+			.submit_nice input{ font-size:17px}
+			.add_calculate, .add_car, .grey_submit_nice{
+				margin:20px 0;
+				background:#5c5d5d;
+				font-size:13px;
+			}
+			.grey_submit_nice:hover {background:#4a4b4b;}
+			.add_calculate, .add_car{background:#68b930;}	
+			.add_calculate:hover, .add_car:hover {background:#3d820d;}
+			.car_operation{ line-height:15px; margin:15px 10px 10px 40px; cursor:pointer; border-bottom:1px solid #5C5D5D; color:#003366}
+            
+            /*.get_invoice_calculate { line-height:15px; cursor:pointer; border-bottom:1px solid #5C5D5D; color:#003366}*/
+
+        .get_invoice_calculate {
+            display: block;
+            padding: 0px 10px;
+            margin-top: 8px;
+            background: #737572;
+            color: #fff;
+            font: bold 13px/28px Arial;
+            height: 28px;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -o-border-radius: 4px;
+            -khtml-border-radius: 4px;            
+        }  
+
+			.grey_submit_nice{ margin:0 0;  text-decoration:none; padding:0}
+			.grey_submit_nice:hover{ color:#fff;}
+			.submit_nice, .add_calculate, .add_car,.grey_submit_nice{
+				border-radius:4px;
+				-moz-border-radius:4px;
+				-webkit-border-radius:4px;
+				-o-border-radius:4px;
+				-khtml-border-radius:4px;
+			}
+			.date_change{ padding:12px 12px 0px 40px; display:none;  }
+		/*nice buttons and links end*/
+
+/*GENERAL ELEMENTS START*/
+	a { color:#036}
+	a:hover{ color:#000}
+	h1{
+		margin:0 0 20px;
+		font:28px/1 Tahoma, Geneva, sans-serif;
+	}
+/*GENERAL ELEMENTS END*/
+/*---PAGER START---*/
+.pagerUL{ overflow: hidden; zoom:1; }
+	.pagerUL li{ float: left; margin-right: 10px; }
+		.pagerUL li a{ color: #373737; padding: 5px; line-height: 1.2; }
+			.pagerUL li a:hover, .pagerUL li a.pcurr{ color: #fff; background: #52bc2c; text-decoration: none; }
+/*---PAGER END---*/
+#flipBox{
+	width:250px;
+	height:200px;
+	overflow:hidden;
+	position:absolute;
+	left:-270px;
+}
+	.zamok_pic{ position:absolute; left:13px; top:8px; opacity:0}
+.flipped_here{ width:245px; height:200px; position:relative}
+.zamok_wrap{
+	width:450px; height:200px;
+	position:absolute;
+	top:50%; left:50%;
+	margin:-130px 0 0 -230px;
+	padding-top:0px;
+}
+.logindata {display: none; text-align:left; padding-top:5px}	
+.loginflip{ height:208px; font-size:17px; padding-top:20px; text-align:center }
+.loginform{ width:250px}
+.autoclear{ color:#666; font-style:italic}
+.autoclear-normalcolor{ color:#000}
+.warning{background-color:#feb39e;}
+.diller_in_day{ padding-bottom:15px;}
+	.diller_name{ font-size:15px; font-weight:bold; margin:8px 0;}
+	.diller_summary, .orange_itogo{
+		width:100%;
+		border-top:3px solid #6cc82a;
+		border-bottom:3px solid #6cc82a;
+		font-size:13px;
+	}
+	.orange_itogo{border-top:3px solid #ff8400; border-bottom:3px solid #ff8400;}
+		.diller_summary th, .orange_itogo th, .green_new_fon, .orange_new_fon{
+			text-align:left;
+			padding:9px 17px;
+			color:#fff;
+			font-weight:normal;
+			background:#6cc82a;
+			text-transform:uppercase;
+			line-height:1.2;
+			width:90px;
+			vertical-align:top;
+			font-size:12px;
+		}
+		.orange_itogo tbody th{ color:#000; }
+		.orange_itogo th, .orange_new_fon{ background:#ff8400; border-right:1px solid #ff8400}
+			.orange_itogo thead td{ background:#ffedd9; font-weight:bold}
+			.orange_itogo  tbody th{ background:none; font-size:14px; font-weight:bold; border-bottom:1px solid #bfbfbf;}
+			.orange_itogo  tbody th .fr{ font-size:11px; font-weight:normal;}
+			.diller_total{ font: 32px/1.2 'MyriadPro', Arial}
+                        .diller_invoice { font: 22px/1.2 'MyriadPro', Arial}
+		.diller_summary td, .orange_itogo td{ text-align:center; background:#f1f1f5;  border-bottom:1px solid #bfbfbf; padding:10px 3px;}
+		.orange_itogo td{ background:#fff; color:#000}
+		.diller_summary thead td, .orange_itogo thead td{ border-bottom:1px solid #6cc82a}
+		.orange_itogo thead td{border-bottom:1px solid #ff8400}
+			.diller_summary table{ border:none}
+				.diller_summary table tbody tr:last-child td{ border-bottom:none}
+			.diller_summary_expand{
+				width:30px; height:30px;
+				margin:0 auto;
+				cursor:pointer;
+				background:url(http://www.stonelight.kiev.ua/assets/a60996b3/pic/pic_css/diller_summary_expand.png) 0 -30px no-repeat;
+			}
+			.orange_itogo td{ border-right:1px solid #bfbfbf;}
+			.orange_itogo tr td:last-child{ border-right:none}
+			.diller_summary_expand.opened{
+				background-position:0 0;
+			}
+			.orange_itogo tbody tr:nth-child(even) td, .orange_itogo tbody tr:nth-child(even) th{
+				background:#ffedd9
+			}
+			.div_add_calculate, .div_add_car{ margin-bottom:30px;}
+			.save_new_record{ display:none;}
+			.diller_in_day .from_bd{ padding-top:0}
+			.diller_in_day .car_head{ border-top:none}
+.car_n{
+    color: #4A4B4B;
+    font-style: italic;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.agent_text {
+    clear: both;
+    display: block;
+    font-weight: bold;
+}
+.mtb5{ margin: 5px 0;}
+
+
+.car_head .orange_new_fon{ height:37px}
+.car_body .green_new_fon, .car_body .orange_new_fon{ margin-bottom:-6px; margin-right:10px}
+
+.diller_calculate{ border-bottom: 2px solid #6CC82A;  margin-bottom:35px; }
+
+
+.green_new_fon, .orange_new_fon{ display:block; position:absolute; top:0; left:0; z-index:-1; width:130px; height:500px;}
+.green_new_fon + .car_type{ color:#fff}
+.orange_new_fon + .car_type{ color:#fff}
+
+.car_head{  position:relative;}
+.car_head .green_new_fon, .car_head .orange_new_fon{ padding:0;  width:164px; height:38px; margin:0; z-index:1}
+
+.add_blocks_btn, .add_ublocks_btn, .add_glue_btn{
+	width:31px; height:30px;
+	background:url(../pic/pic_css/add_different.png);
+	padding:0;
+	margin:7px 12px 0px 0;
+	text-indent:-9900px;
+	cursor:pointer;
+}
+.add_blocks_btn:hover{ background-position:-31px 0}
+.add_ublocks_btn{ background-position:0 -30px}
+.add_ublocks_btn:hover{background-position:-31px -30px}
+.add_glue_btn{background-position:0 -60px}
+.add_glue_btn:hover{background-position:-31px -60px}
+.add_new_label{ margin:7px 10px 0 0; line-height: 28px; font-weight:bold}
+
+
+.pallet_amount label{width:45px;  display:inline-block; text-align:left }
+.from_bd label{ width:auto}
+.from_bd .editable .pallet_amount label{width:45px;}
+
+.car_comments{
+     padding: 10px 0 10px 80px;
+     display: none;
+}
+    .car_comments textarea{ width: 476px;}
+   .car_comments .custom-select{ width:100%}
+   
+.p10 {padding:10px}
+a.last_date_change_trigger {padding:12px 12px 12px 10px; color:#64b829;}
+.last_date_change {padding:10px 12px 0px 20px; display:none;}
+.last_date_save {display:none;}
+.date_is_change { color:red;clear: both;display: block;}
+
+.error {border:1px solid red !important;}
+.errormsg {font-weight: bold; color: red;}
+.field_totalprice, .field_invoice {
+   font-weight: bold; 
+
+}
+.totalprice, .invoice {font-weight: bold; color:#6cc82a; font-size: 16px}
+
+#form_calculate > div.h  > .fl{ padding-top:6px}
+#form_calculate > div.h  > .get_invoice_calculate{ padding-top:0; margin-left:20px; margin-top:0}
+
+// ADMIN HELP
+.xhr-form-inner label{
+    display: inline-block;
+    vertical-align: top;
+    width: 185px;
+    background: red;
+}
+
+.xhr-form-inner input[type="text"]{
+    border: 1px solid #bfbfbf;   
+}
+.xhr-form-inner input[type="textarea"]{
+    border: 1px solid #bfbfbf;   
+}
